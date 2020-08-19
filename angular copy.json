@@ -3,24 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-app22angular10d": {
+    "my-app22Angular10d": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "my-app22angular10d:build" 
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "my-app22Angular10d:build:production"
-            }
-          }
-        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -71,7 +60,18 @@
             }
           }
         },
-        
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "my-app22Angular10d:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "my-app22Angular10d:build:production"
+            }
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
